@@ -4,6 +4,8 @@
 // You can document general stuff about the package here if you like.
 package clock
 
+import "fmt"
+
 // The value of testVersion here must match `targetTestVersion` in the file
 // clock_test.go.
 const testVersion = 4
@@ -12,18 +14,20 @@ const testVersion = 4
 // More details and hints are in clock_test.go.
 
 type Clock struct {
-  Minute, Hour int
+	Minute, Hour int
 }
 
 func New(hour, minute int) Clock {
-  return Clock.{Hour: hour, Minute: minute}
+	clock := Clock{Hour: hour, Minute: minute}
+	fmt.Println(clock)
+	return clock
 }
 
-func (Clock) String() string {
+func (c Clock) String() string {
+	return fmt.Sprintf("%b", c)
 }
 
-func (Clock) Add(minutes int) Clock {
+func (c Clock) Add(minutes int) Clock {
+	b := Clock{Hour: c.Hour, Minute: c.Minute + minutes}
+	return b
 }
-
-// Remember to delete all of the stub comments.
-// They are just noise, and reviewers will complain.
