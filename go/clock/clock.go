@@ -25,8 +25,7 @@ func (c Clock) String() string {
 	if new_hour < 0 {
 		new_hour += 24
 	}
-
-	return fmt.Sprintf("%.2v:%.2v", new_hour, new_minute)
+	return fmt.Sprintf("%02d:%02d", new_hour, new_minute)
 }
 
 func (c Clock) Add(minutes int) Clock {
