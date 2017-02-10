@@ -11,9 +11,12 @@ const testVersion = 4
 // Clock API as stub definitions.  No, it doesn't compile yet.
 // More details and hints are in clock_test.go.
 
-type Clock // Complete the type definition.  Pick a suitable data type.
+type Clock struct {
+  Minute, Hour int
+}
 
 func New(hour, minute int) Clock {
+  return Clock.{Hour: hour, Minute: minute}
 }
 
 func (Clock) String() string {
