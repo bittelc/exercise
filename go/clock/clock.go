@@ -9,8 +9,7 @@ type Clock struct {
 }
 
 func New(hour, minute int) Clock {
-	c := Clock{Hour: hour, Minute: minute}
-	return c
+	return Clock{Hour: hour, Minute: minute}
 }
 
 func (c Clock) String() string {
@@ -29,6 +28,5 @@ func (c Clock) String() string {
 }
 
 func (c Clock) Add(minutes int) Clock {
-	b := Clock{Hour: c.Hour, Minute: c.Minute + minutes}
-	return b
+	return Clock{Hour: c.Hour, Minute: c.Minute + minutes}
 }
