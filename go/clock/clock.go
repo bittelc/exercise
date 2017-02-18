@@ -1,3 +1,4 @@
+// clock is a package about clocks and allws for adding subtracting and comparing clocks
 package clock
 
 import "fmt"
