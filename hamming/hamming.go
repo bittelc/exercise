@@ -1,4 +1,4 @@
-//Packaging hamming calculates the hamming distance between two homologuos strings.
+//Package hamming calculates the hamming distance between two homologuos strings.
 package hamming
 
 import "fmt"
