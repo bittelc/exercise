@@ -2,14 +2,13 @@
 package gigasecond
 
 import (
-	"fmt"
 	"time"
 )
 
 const testVersion = 4
+const Gigasecond = time.Duration(1e9) * time.Second
 
 // API function.  It uses a type from the Go standard library.
-func AddGigasecond(time.Time) time.Time {
-	return time.Time
-	// wtf!
+func AddGigasecond(t time.Time) time.Time {
+	return t.Add(Gigasecond)
 }
