@@ -2,7 +2,6 @@
 package raindrops
 
 import "strconv"
-import "fmt"
 
 const (
 	testVersion = 2
@@ -27,4 +26,6 @@ func Convert(i int) string {
 		}
 		return noise
 	}
+
+	return strconv.Itoa(i)
 }
