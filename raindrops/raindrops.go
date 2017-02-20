@@ -1,7 +1,30 @@
+// Package raindrops converts
 package raindrops
 
-const testVersion = 2
+import "strconv"
+import "fmt"
 
-func Convert(int) string
+const (
+	testVersion = 2
+	Pling       = "Pling"
+	Plang       = "Plang"
+	Plong       = "Plong"
+)
 
-// The test program has a benchmark too.  How fast does your Convert convert?
+// Convert converst an integer parameter into a raindrop sound
+func Convert(i int) string {
+	var noise string
+
+	if i%3 == 0 || i%5 == 0 || i%7 == 0 {
+		if i%3 == 0 {
+			noise += Pling
+		}
+		if i%5 == 0 {
+			noise += Plang
+		}
+		if i%7 == 0 {
+			noise += Plong
+		}
+		return noise
+	}
+}
