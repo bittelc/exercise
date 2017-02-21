@@ -1,5 +1,17 @@
+// Package acronym converts a given string into its acronym
+// Eg. "Is this a sentence" => "ITAS"
 package acronym
+
+import "strings"
+import "fmt"
 
 const testVersion = 2
 
-func Abbreviate(string) string
+func Abbreviate(str string) string {
+	var acronym string
+	words := strings.Fields(str)
+	for _, word := range words {
+		acronym += word[0]
+	}
+	return acronym
+}
