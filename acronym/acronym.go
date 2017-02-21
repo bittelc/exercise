@@ -15,7 +15,7 @@ func Abbreviate(str string) string {
 	}
 	words := strings.FieldsFunc(str, f)
 	for _, word := range words {
-		acronym += fmt.Sprintf("%c", word[0])
+		acronym += strings.ToUpper(fmt.Sprintf("%c", word[0]))
 	}
 	return acronym
 }
