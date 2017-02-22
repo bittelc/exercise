@@ -10,6 +10,7 @@ const testVersion = 2
 
 func Abbreviate(str string) string {
 	var acronym string
+	fmt.Printf(str)
 	f := func(c rune) bool {
 		return !unicode.IsLetter(c)
 	}
