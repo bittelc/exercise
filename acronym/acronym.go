@@ -2,21 +2,18 @@
 // Eg. "Is this a sentence" => "ITAS"
 package acronym
 
-import "strings"
-import "fmt"
-import "unicode"
+import (
+	"fmt"
+	"regexp"
+	"strings"
+)
 
 const testVersion = 2
 
 func Abbreviate(str string) string {
-	var acronym string
-	fmt.Printf(str)
-	f := func(c rune) bool {
-		return !unicode.IsLetter(c)
-	}
-	words := strings.FieldsFunc(str, f)
-	for _, word := range words {
-		acronym += strings.ToUpper(fmt.Sprintf("%c", word[0]))
-	}
-	return acronym
+	criteria := regexp.MustCompile("[A-Z]")
+	regex_match := criteria.FindAllString(str, -1)
+	fmt.Printf(strings.Join(regex_match[:], ""))
+	// return fmt.Sprintf(strings.TrimSpace(fmt.Sprintf("%v", regex_match)))
+	return strings.Join(regex_match[:], "")
 }
