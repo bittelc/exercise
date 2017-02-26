@@ -3,17 +3,21 @@
 package acronym
 
 import (
-	"fmt"
 	"regexp"
 	"strings"
 )
 
 const testVersion = 2
 
+// Abbreviate takes a phrase and converts it to an acronym
 func Abbreviate(str string) string {
-	criteria := regexp.MustCompile("[A-Z]")
-	regex_match := criteria.FindAllString(str, -1)
-	fmt.Printf(strings.Join(regex_match[:], ""))
-	// return fmt.Sprintf(strings.TrimSpace(fmt.Sprintf("%v", regex_match)))
-	return strings.Join(regex_match[:], "")
+	var acronym string
+	matches := regexp.
+		MustCompile("[A-Z]+[a-z]*|[a-z]+").
+		FindAllString(str, -1)
+
+	for _, word := range matches {
+		acronym += strings.ToUpper(string(word[0]))
+	}
+	return acronym
 }
