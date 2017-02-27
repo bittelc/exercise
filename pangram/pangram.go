@@ -2,8 +2,7 @@
 package pangram
 
 import (
-	"fmt"
-	//"regexp"
+	"regexp"
 	"strings"
 )
 
@@ -13,22 +12,20 @@ const testVersion = 1
 func IsPangram(str string) bool {
 	uniquity := 0
 	var uniqueLetters string
-	//isAscii := regexp.MustCompile("[A-Z]")
+	isAscii := regexp.MustCompile("[A-Z]")
 
 	for _, char := range strings.ToUpper(str) {
-		fmt.Println(string(char))
-		if !strings.Contains(uniqueLetters, string(char)) {
-			// isAscii.MatchString(fmt.Sprint(char)) {
-			uniqueLetters += string(char)
+		sChar := string(char)
+		if !strings.Contains(uniqueLetters, sChar) &&
+			isAscii.MatchString(sChar) {
+			uniqueLetters += sChar
 			uniquity++
 		}
 	}
 
-	if uniquity == 24 {
+	if uniquity == 26 {
 		return true
 	}
 
-	fmt.Printf("Uniquity = %v\n", uniquity)
-	fmt.Println("Unique letters = " + uniqueLetters)
 	return false
 }
