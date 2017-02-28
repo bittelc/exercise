@@ -1,3 +1,9 @@
-package bob // package name must match the package name in bob_test.go
+// Package bob defines a lame teenager who responds like a teenager does
+package bob
 
-const testVersion = 2 // same as targetTestVersion
+const testVersion = 2
+
+// Hey accepts a statement to Bob and responds with a teenager-response
+func Hey(str string) {
+
+}
