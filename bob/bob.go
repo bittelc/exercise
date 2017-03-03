@@ -3,7 +3,13 @@ package bob
 
 import "regexp"
 
-const testVersion = 2
+const (
+	testVersion = 2
+	sure        = "Sure."
+	whatever    = "Whatever."
+	chill       = "Whoa, chill out!"
+	fine        = "Fine. Be that way!"
+)
 
 // Hey accepts a statement to Bob and responds with a teenager-response
 func Hey(str string) string {
@@ -18,16 +24,16 @@ func Hey(str string) string {
 	switch {
 	case isBlank.MatchString(str),
 		len(str) == 0:
-		return "Fine. Be that way!"
+		return fine
 	case isAllCaps.MatchString(str),
 		isNumsAndCaps.MatchString(str),
 		isSpCharsAndCaps.MatchString(str),
 		isLatinSupplement.MatchString(str):
-		return "Whoa, chill out!"
+		return chill
 	case isQuestion.MatchString(str):
-		return "Sure."
+		return sure
 	default:
-		return "Whatever."
+		return whatever
 	}
 
 }
