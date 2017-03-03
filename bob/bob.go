@@ -2,7 +2,6 @@
 package bob
 
 import "regexp"
-import "fmt"
 
 const testVersion = 2
 
@@ -20,18 +19,14 @@ func Hey(str string) string {
 	case isBlank.MatchString(str),
 		len(str) == 0:
 		return "Fine. Be that way!"
-	case isAllCaps.MatchString(str):
-		return "Whoa, chill out!"
-	case isNumsAndCaps.MatchString(str):
-		return "Whoa, chill out!"
-	case isSpCharsAndCaps.MatchString(str):
-		return "Whoa, chill out!"
-	case isLatinSupplement.MatchString(str):
+	case isAllCaps.MatchString(str),
+		isNumsAndCaps.MatchString(str),
+		isSpCharsAndCaps.MatchString(str),
+		isLatinSupplement.MatchString(str):
 		return "Whoa, chill out!"
 	case isQuestion.MatchString(str):
 		return "Sure."
 	default:
-		fmt.Println(len(str))
 		return "Whatever."
 	}
 
