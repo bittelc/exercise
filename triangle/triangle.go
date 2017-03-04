@@ -6,7 +6,6 @@ const testVersion = 3
 // Code this function.
 func KindFromSides(a, b, c float64) Kind {
 
-
 }
 
 // Notice it returns this type.  Pick something suitable.
