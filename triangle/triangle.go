@@ -1,12 +1,9 @@
-// Package triangle determines whether a series of 3 numbers can be contructed into a specific type of triangle
 package triangle
 
 const testVersion = 3
 
 // Code this function.
-func KindFromSides(a, b, c float64) Kind {
-
-}
+func KindFromSides(a, b, c float64) Kind
 
 // Notice it returns this type.  Pick something suitable.
 type Kind
