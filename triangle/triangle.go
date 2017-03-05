@@ -20,8 +20,9 @@ var Sca = Kind{Sca: true}
 
 // KindFromSides accepts lenghts of sides of a triangle and classifies the triangle
 func KindFromSides(a, b, c float64) Kind {
-	var triangle Kind
-	sorted := sort.Float64s([]float64{a, b, c})
-	fmt.Println(sorted)
+	triangle := NaT
+	lengths := []float64{a, b, c}
+	sort.Float64s(lengths)
+	fmt.Println(lengths)
 	return triangle
 }
