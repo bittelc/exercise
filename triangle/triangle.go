@@ -2,7 +2,7 @@
 package triangle
 
 import (
-	"fmt"
+	"math"
 	"sort"
 )
 
@@ -20,7 +20,6 @@ var Sca = Kind{Sca: true}
 
 // KindFromSides accepts lenghts of sides of a triangle and classifies the triangle
 func KindFromSides(a, b, c float64) Kind {
-	triangle := NaT
 
 	lengths := []float64{a, b, c}
 	sort.Float64s(lengths)
@@ -28,14 +27,20 @@ func KindFromSides(a, b, c float64) Kind {
 	mid := lengths[1]
 	long := lengths[2]
 
-	if short == mid && mid == long {
-		triangle = Equ
+	if short == 0 || mid == 0 || long == 0 ||
+		short+mid < long ||
+		math.IsNaN(short) ||
+		math.IsInf(long, 0) {
+		return NaT
 	}
 
-	fmt.Println(lengths)
-	fmt.Println(short)
-	fmt.Println(mid)
-	fmt.Println(long)
+	if short == mid && mid == long {
+		return Equ
+	}
 
-	return triangle
+	if short == mid || mid == long {
+		return Iso
+	}
+
+	return Sca
 }
