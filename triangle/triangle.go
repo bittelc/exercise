@@ -12,7 +12,6 @@ type Kind struct {
 	NaT, Equ, Iso, Sca bool
 }
 
-// Pick values for the following identifiers used by the test program.
 var NaT = Kind{NaT: true}
 var Equ = Kind{Equ: true}
 var Iso = Kind{Iso: true}
@@ -23,9 +22,7 @@ func KindFromSides(a, b, c float64) Kind {
 
 	lengths := []float64{a, b, c}
 	sort.Float64s(lengths)
-	short := lengths[0]
-	mid := lengths[1]
-	long := lengths[2]
+	short, mid, long := lengths[0], lengths[1], lengths[2]
 
 	if short == 0 || mid == 0 || long == 0 ||
 		short+mid < long ||
