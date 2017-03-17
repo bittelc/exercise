@@ -1,18 +1,17 @@
 // Package twelve returns a single verse for any of the twelve days of Christmas
 package twelve
 
-import (
-	"fmt"
-)
+import ()
 
 const testVersion = 1
 
+// Verse returns a single verse corresponding to the i'th numbered verse
 func Verse(i int) string {
-	fmt.Println("this is here")
 	return "oh ya"
 }
 
+// Song returns the entire song, line seperating each verse
 func Song() string {
-	fmt.Println("this is that")
+	// Could potentially use a recurse loop here. Eg. string += Song(i+1)
 	return "string"
 }
