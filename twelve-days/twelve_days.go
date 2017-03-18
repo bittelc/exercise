@@ -45,10 +45,15 @@ func Verse(i int) string {
 
 // Song returns the entire song, line seperating each verse
 func Song() string {
-	// Could potentially use a recurse loop here. Eg. string += Song(i+1)
-	return "string"
+
+	var song string
+	for i := 1; i <= 12; i++ {
+		song += Verse(i) + "\n"
+	}
+	return song
 }
 
+// verbiage provides the initial entry verbiage into the 12 days of Christmas song
 func verbiage(daysGift dailyGift) string {
 	return fmt.Sprintf("On the %s day of Christmas my true love gave to me,", daysGift.day)
 }
