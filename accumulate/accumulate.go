@@ -5,5 +5,7 @@ import ()
 
 const testVersion = 1
 
-func Accumulate(input []string, method func(mod string) string) {
+func Accumulate(input []string, fn func(mod string) string) string {
+	return "oh ya"
+
 }
