@@ -31,11 +31,13 @@ var twelveGifts = []dailyGift{
 func Verse(i int) string {
 	verse := verbiage(twelveGifts[i-1])
 
-	for j := i; j >= 1; j-- {
-		verse += twelveGifts[j-1].gift
+	for j := i; j >= 2; j-- {
+		verse += " " + twelveGifts[j-1].gift + ","
 	}
 	if i != 1 {
 		verse += " and " + twelveGifts[0].gift
+	} else {
+		verse += " " + twelveGifts[0].gift
 	}
 
 	return verse
@@ -48,5 +50,5 @@ func Song() string {
 }
 
 func verbiage(daysGift dailyGift) string {
-	return fmt.Sprintf("On the %s day of Christmas my true love gave to me, ", daysGift.day)
+	return fmt.Sprintf("On the %s day of Christmas my true love gave to me,", daysGift.day)
 }
