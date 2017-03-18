@@ -5,6 +5,10 @@ import ()
 
 const testVersion = 1
 
-func Accumulate(input []string, fn func(mod string) string) string {
-	// return "oh ya"
+func Accumulate(input []string, fn func(mod string) string) []string {
+	var applied []string
+	for _, str := range input {
+		applied = append(applied, fn(str))
+	}
+	return applied
 }
